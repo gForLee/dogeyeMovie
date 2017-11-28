@@ -2,7 +2,14 @@
 
 > 狗眼电影第一版！
 
+用的是vue+vue router+mint ui编写的项目。
+跨域用的是jsonp。
 
+我这里说下问题哈！
+第一个问题就是抓取演员头像的时候因为豆瓣的防刷浏览机制的问题请求不到演员头像！
+第二个就是data里面没有写各个数据的类型。
+第三个就是样式好像不太好看！
+第四个求各位老哥别打！
 
 ## Build Setup
 
@@ -20,5 +27,3 @@ npm install
 npm run dev
 
 
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
