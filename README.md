@@ -20,7 +20,7 @@ git clone https://github.com/diaosiwei/dogeyeMovie.git
 # cd 到dogeyeMovie
 cd dogeyeMovie 
 
-# 安装包依赖
+# 安装包依赖  建议各位老哥使用淘宝镜像 因为比较快！！！
 npm install
 
 # 启动端口
