@@ -44,7 +44,7 @@ export default class Header extends Vue {
   }
 
   private goBack() {
-    this.$route.back(-1);
+    window.history.go(-1);
   }
 
 }
