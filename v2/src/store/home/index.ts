@@ -1,6 +1,6 @@
 import { State } from '@/store/interface';
 import { Commit } from 'vuex';
-import { getMovieList } from '@/api/home';
+import { getMovieList } from '@/api/movie';
 
 const state: State = {
     movieList: [],

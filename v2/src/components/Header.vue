@@ -1,13 +1,15 @@
 <template>
   <div class="header">
     <van-nav-bar
-      title="首页"
+      :title="title"
+      :left-arrow="back"
+      @click-left="goBack"
     />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
 import { NavBar } from 'vant';
 
 @Component({
@@ -16,7 +18,41 @@ import { NavBar } from 'vant';
   },
 })
 export default class Header extends Vue {
+  private title: string = '';
+  private back: boolean = false;
+  @Watch('$route.meta.title')
+  onRouterTtileChanged(val: string) { 
+    this.setRouterName(val)
+    if (val !== '首页') {
+      this.back = true;
+    } else {
+      this.back = false;
+    }
+  }
+
+  private created() {
+    this.title = this.$route.meta.title;
+    if (this.title !== '首页') {
+      this.back = true;
+    } else {
+      this.back = false;
+    }
+  }
+
+  private setRouterName (name: string){
+    this.title = name;
+  }
+
+  private goBack () {
+    this.$router.back(-1);
+  }
+
 }
 </script>
-<style scoped>
+<style lang="sass">
+  .van-nav-bar
+    color: #fff
+    background-color: #EE4000
+  .van-nav-bar .van-icon
+    color: #fff
 </style>

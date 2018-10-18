@@ -16,7 +16,7 @@ service.interceptors.request.use((config: AxiosRequestConfig) => {
 
 service.interceptors.response.use(
     (response: AxiosResponse) => {
-        if (response.data.start !== 0) {
+        if (response.status !== 200) {
             Toast.fail('请求错误！');
         } else {
             return response.data;

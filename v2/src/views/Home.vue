@@ -1,31 +1,20 @@
 <template>
   <div class="home">
-    <van-tabs v-model="active">
+    <Spinner v-if="loading"></Spinner>
+    <van-tabs v-model="active"  v-if="!loading">
       <van-tab title="正在热映">
         <div id="listMovieBox">
-          <div class="item" v-for="(item, index) in movieListData"  :key = 'index'>
-            <a>
-              <Movie :movie="item"></Movie>
-            </a>
-          </div>
+          <MovieItem :movie="movieListData"></MovieItem>
         </div>
       </van-tab>
       <van-tab title="即将上映">
          <div id="listMovieBox">
-          <div class="item" v-for="(item, index) in movieListData"  :key = 'index'>
-            <a>
-              <Movie :movie="item"></Movie>
-            </a>
-          </div>
+          <MovieItem :movie="movieListData"></MovieItem>
         </div>
       </van-tab>
       <van-tab title="Top250">
         <div id="listMovieBox">
-          <div class="item" v-for="(item, index) in movieListData"  :key = 'index'>
-            <a>
-              <Movie :movie="item"></Movie>
-            </a>
-          </div>
+          <MovieItem :movie="movieListData"></MovieItem>
         </div>
       </van-tab>
     </van-tabs>
@@ -36,24 +25,25 @@
 import { Component, Vue, Watch, Prop } from 'vue-property-decorator';
 import {Action, Mutation, State} from 'vuex-class';
 import { Tab, Tabs, Toast } from 'vant';
-import Movie from '@/components/MovieItem.vue';
+import MovieItem from '@/components/MovieItem.vue';
+import Spinner from '@/components/Spinner.vue';
 
 @Component({
   components: {
     [Tab.name]: Tab,
     [Tabs.name]: Tabs,
-    Movie,
+    MovieItem,
+    Spinner,
   },
 })
 export default class Home extends Vue {
-      private cate = 'in_theaters';
-      private active =  0;
-      private movieListData = [];
+      private cate: string = 'in_theaters';
+      private active: number =  0;
+      private movieListData = null;
+      private loading: boolean = true;
       @Action private movieList!: (cate: string) => any;
-   
       @Watch('active')
       private onActiveChanged( val: number ) {
-        console.log(val)
         if ( val === 0 ) {
           this.changeType(0, 'in_theaters');
         } else if (val === 1) {
@@ -66,23 +56,24 @@ export default class Home extends Vue {
       private created() {
         this.movieList( this.cate ).then( (res: any) => {
           this.movieListData = res.subjects;
+          this.loading = false;
         });
       }
 
       private changeType(active: number, name: string) {
         this.cate = name;
-        Toast.loading({
-          mask: true,
-          message: '加载中...',
-        });
+        this.loading = true;
         this.movieList( this.cate ).then( (res: any) => {
           this.movieListData = res.subjects;
-          Toast.clear();
+          this.loading = false;
         });
       }
 }
 </script>
 <style lang="sass">
+
   #listMovieBox
     padding: 0 16px
+    p
+      text-align: left;
 </style>

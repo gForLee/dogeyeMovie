@@ -21,7 +21,7 @@ export default class App extends Vue {
 p{
   margin: 0;
   padding: 0;
-  text-align: left;
+
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -30,16 +30,10 @@ p{
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
+.flex{
+  display: flex;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
 </style>
