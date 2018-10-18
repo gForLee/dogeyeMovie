@@ -21,8 +21,8 @@ export default class Header extends Vue {
   private title: string = '';
   private back: boolean = false;
   @Watch('$route.meta.title')
-  onRouterTtileChanged(val: string) { 
-    this.setRouterName(val)
+  private onRouterTtileChanged(val: string) {
+    this.setRouterName(val);
     if (val !== '首页') {
       this.back = true;
     } else {
@@ -39,12 +39,12 @@ export default class Header extends Vue {
     }
   }
 
-  private setRouterName (name: string){
+  private setRouterName(name: string) {
     this.title = name;
   }
 
-  private goBack () {
-    this.$router.back(-1);
+  private goBack() {
+    this.$route.back(-1);
   }
 
 }
