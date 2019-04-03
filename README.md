@@ -1,7 +1,6 @@
 # 狗眼电影，欢迎star！！！！！你们的支持是我最大的动力！
 
 > 狗眼电影第二版！
-哈哈你们肯定以为我忘了这个项目对吧！
 
 第二版是用vue + typescript + vant + axios + vuex编写.
 
@@ -11,7 +10,7 @@
 ## Build Setup
 ```
 # 先把项目克隆到本地
-git clone https://github.com/diaosiwei/dogeyeMovie.git
+git clone https://github.com/martin-yin/dogeyeMovie.git
 
 # cd 到dogeyeMovie/v2
 cd dogeyeMovie 
@@ -45,7 +44,7 @@ npm run serve
 
 ``` bash
 # 先把项目克隆到本地
-git clone https://github.com/diaosiwei/dogeyeMovie.git
+git clone https://github.com/martin-yin/dogeyeMovie.git
 
 # cd 到dogeyeMovie/v1
 cd dogeyeMovie 
