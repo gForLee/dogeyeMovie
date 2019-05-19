@@ -6,6 +6,8 @@
 
 ![](https://raw.githubusercontent.com/martin-yin/dogeyeMovie/master/1.png)
 ![](https://raw.githubusercontent.com/martin-yin/dogeyeMovie/master/2.png)
+![](https://raw.githubusercontent.com/martin-yin/dogeyeMovie/master/3.png)
+![](https://raw.githubusercontent.com/martin-yin/dogeyeMovie/master/4.png)
 
 图片报403得错误……应该是没权限导致的！
 
