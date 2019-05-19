@@ -1,7 +1,13 @@
 # 狗眼电影，欢迎star！！！！！你们的支持是我最大的动力！
 
-#### 感谢大家的start，项目已经21颗星了，v1的版本不打算优化了，v2的版本会抽点时间优化，并尽可能多的使用一些ts版vue的api。目前主力在vue-color-ui项目。
-#### 我尹某人感谢各位。
+#### 😭本来想优化代码的……然后发现好像没啥可以在整得了。
+####  豆瓣api 接口可能随时狗带……同学们要注意了！
+
+
+![](https://raw.githubusercontent.com/martin-yin/dogeyeMovie/master/1.png)
+![](https://raw.githubusercontent.com/martin-yin/dogeyeMovie/master/2.png)
+
+图片报403得错误……应该是没权限导致的！
 
 > 狗眼电影第二版！
 

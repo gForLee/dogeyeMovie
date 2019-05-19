@@ -4,7 +4,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://api.douban.com/v2',
+        target: 'https://api.douban.com/v2',
         changeOrigin: true,
         ws: true,
         pathRewrite: {
